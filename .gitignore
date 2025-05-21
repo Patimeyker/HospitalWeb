@@ -127,8 +127,12 @@ celerybeat.pid
 # SageMath parsed files
 *.sage.py
 
+# Игнорировать файлы Visual Studio
+.vs/
+
 # Environments
 .env
+.env1
 .venv
 env/
 venv/
