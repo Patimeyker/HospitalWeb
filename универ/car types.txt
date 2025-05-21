@@ -1,0 +1,110 @@
+<cars>
+    <car>
+        <type>Sedan</type>
+        <format>Three-box design</format>
+        <seats>4-5</seats>
+        <doors>4</doors>
+        <roof>hard</roof>
+        <height>low</height>
+        <usage>city</usage>
+    </car>
+    <car>
+        <type>Limousine</type>
+        <format>Three-box design</format>
+        <seats>4-7</seats>
+        <doors>4-6</doors>
+        <roof>hard</roof>
+        <height>low</height>
+        <usage>luxury</usage>
+    </car>
+    <car>
+        <type>Hatchback</type>
+        <format>Two-box design</format>
+        <seats>4-5</seats>
+        <doors>3-5</doors>
+        <roof>hard</roof>
+        <height>low</height>
+        <usage>city</usage>
+    </car>
+    <car>
+        <type>Liftback</type>
+        <format>Two-box design</format>
+        <seats>4-5</seats>
+        <doors>3-5</doors>
+        <roof>hard</roof>
+        <height>low</height>
+        <usage>city</usage>
+    </car>
+    <car>
+        <type>Station Wagon</type>
+        <format>Two-box design</format>
+        <seats>4-7</seats>
+        <doors>3-5</doors>
+        <roof>hard</roof>
+        <height>medium</height>
+        <usage>family</usage>
+    </car>
+    <car>
+        <type>Coupe</type>
+        <format>Three-box design</format>
+        <seats>2 or 2+2</seats>
+        <doors>2</doors>
+        <roof>hard</roof>
+        <height>low</height>
+        <usage>sport</usage>
+    </car>
+    <car>
+        <type>Convertible</type>
+        <format>Three-box design</format>
+        <seats>2+2</seats>
+        <doors>2</doors>
+        <roof>soft</roof>
+        <height>low</height>
+        <usage>sport</usage>
+    </car>
+    <car>
+        <type>Roadster</type>
+        <format>Three-box design</format>
+        <seats>2</seats>
+        <doors>2</doors>
+        <roof>soft</roof>
+        <height>low</height>
+        <usage>sport</usage>
+    </car>
+    <car>
+        <type>Targa</type>
+        <format>Three-box design</format>
+        <seats>2</seats>
+        <doors>2</doors>
+        <roof>hard/foldable</roof>
+        <height>low</height>
+        <usage>sport</usage>
+    </car>
+    <car>
+        <type>Minivan</type>
+        <format>One-box design</format>
+        <seats>5-9</seats>
+        <doors>5</doors>
+        <roof>hard</roof>
+        <height>high</height>
+        <usage>family</usage>
+    </car>
+    <car>
+        <type>Pickup</type>
+        <format>Three-box design</format>
+        <seats>2-5</seats>
+        <doors>2-4</doors>
+        <roof>hard</roof>
+        <height>high</height>
+        <usage>cargo</usage>
+    </car>
+    <car>
+        <type>Crossover</type>
+        <format>Two-box design</format>
+        <seats>4-7</seats>
+        <doors>3-5</doors>
+        <roof>hard</roof>
+        <height>high</height>
+        <usage>family</usage>
+    </car>
+</cars>

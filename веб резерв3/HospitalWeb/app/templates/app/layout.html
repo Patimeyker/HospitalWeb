@@ -1,0 +1,95 @@
+﻿{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <title>{% block title %}{{ title }}{% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+          rel="stylesheet">
+
+    <!-- Ваши стили -->
+    <link rel="stylesheet" href="{% static 'app/content/site.css' %}">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <div class="container">
+            <!-- Логотип -->
+            <a class="navbar-brand" href="{% url 'app:index' %}">
+                <img src="{% static 'app/content/logo.png' %}" height="40" alt="Логотип">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="nav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.resolver_match.url_name == 'index' %}active{% endif %}"
+                           href="{% url 'app:index' %}">Главная</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.resolver_match.url_name == 'about' %}active{% endif %}"
+                           href="{% url 'app:about' %}">О нас</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link
+               {% if request.resolver_match.url_name == 'blog_list' or request.resolver_match.url_name == 'blog_detail' %}
+                 active
+               {% endif %}"
+                           href="{% url 'app:blog_list' %}">Блог</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.resolver_match.url_name == 'contact' %}active{% endif %}"
+                           href="{% url 'app:contact' %}">Контакты</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.resolver_match.url_name == 'feedback' %}active{% endif %}"
+                           href="{% url 'app:feedback' %}">Обратная связь</a>
+                    </li>
+                </ul>
+
+                {% if user.is_authenticated %}
+                <span class="navbar-text me-3">
+                    Добро пожаловать, {{ user.username }}!
+                </span>
+                <form method="post" action="{% url 'app:logout' %}" style="display:inline;">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-link nav-link px-2">Выйти</button>
+                </form>
+                {% else %}
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="{% url 'app:login' %}">Вход</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'app:registration' %}">Регистрация</a></li>
+                </ul>
+                {% endif %}
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid" style="padding-top:80px;">
+        {% if messages %}
+        {% for message in messages %}
+        <div class="alert alert-{{ message.tags }} mt-3">{{ message }}</div>
+        {% endfor %}
+        {% endif %}
+
+        {% block content %}{% endblock %}
+    </div>
+
+    <!-- Футер -->
+    <footer class="bg-light text-center text-muted py-3 mt-5">
+        <div class="container">
+            <hr>
+            <p class="mb-1">© {{ year }} — Перинатальный центр им. В. В. Панкратова</p>
+            <p class="small mb-0">Все права защищены.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

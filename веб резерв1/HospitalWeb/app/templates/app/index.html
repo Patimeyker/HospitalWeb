@@ -1,0 +1,57 @@
+﻿{% extends 'app/layout.html' %}
+{% load static %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+<div id="mainCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="0" class="active"></button>
+        <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="1"></button>
+        <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="2"></button>
+    </div>
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="{% static 'app/content/centr1.png' %}" class="d-block w-100" alt="Фон 1">
+        </div>
+        <div class="carousel-item">
+            <img src="{% static 'app/content/centr2.png' %}" class="d-block w-100" alt="Фон 2">
+        </div>
+        <div class="carousel-item">
+            <img src="{% static 'app/content/woman.png' %}" class="d-block w-100" alt="Фон 3">
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#mainCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+    </button>
+
+    <div class="carousel-caption text-center">
+        <h1>{{ message }}</h1>
+        <a href="{% url 'app:about' %}" class="btn btn-lg btn-primary">Узнать больше</a>
+        <p class="mt-3">Мы — семейно-ориентированный роддом. Если вам нужна поддержка родных и близких, то мы только «За»!</p>
+    </div>
+</div>
+
+<section class="services container mt-5">
+    <div class="row">
+        <div class="col-md-4 text-center mb-4">
+            <h3>Комплексная медицинская помощь</h3>
+            <p>Планирование и ведение беременности, роды, выхаживание и наблюдение за новорождёнными детьми.</p>
+            <a href="{% url 'app:blog_list' %}" class="btn btn-outline-primary">Подробнее</a>
+        </div>
+        <div class="col-md-4 text-center mb-4">
+            <h3>Консультативно-диагностический центр</h3>
+            <p>В КДЦ женщины могут пройти необходимые обследования и получить консультации профильных специалистов.</p>
+            <a href="{% url 'app:blog_list' %}" class="btn btn-outline-primary">Подробнее</a>
+        </div>
+        <div class="col-md-4 text-center mb-4">
+            <h3>Экстренная помощь</h3>
+            <p>На базе центра организованы отделения реанимации и интенсивной терапии взрослых, новорождённых и грудных детей.</p>
+            <a href="{% url 'app:blog_list' %}" class="btn btn-outline-primary">Подробнее</a>
+        </div>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,51 @@
+﻿/* Активная вкладка */
+.nav-link.active {
+    background-color: #f5ccec;
+    border-radius: .25rem;
+}
+
+/* Анимация по ховеру */
+.nav-link {
+    transition: background-color 0.3s ease;
+}
+
+    .nav-link:hover {
+        background-color: #f5ccec;
+        border-radius: .25rem;
+    }
+
+/* Карусель — заголовок/кнопка/текст по центру */
+.carousel-caption {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+    .carousel-caption h1 {
+        font-size: 3rem;
+        color: white;
+        text-shadow: 0 0 10px rgba(0,0,0,0.5);
+    }
+
+    .carousel-caption p {
+        font-size: 1.25rem;
+        color: white;
+        text-shadow: 0 0 8px rgba(0,0,0,0.5);
+    }
+
+    .carousel-caption .btn {
+        font-size: 1.1rem;
+    }
+
+/* Раздел услуг — убрали иконки и добавили кнопки */
+.service-card {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+    .service-card img {
+        display: none;
+    }
+
+    .service-card .btn-details {
+        margin-top: 1rem;
+    }

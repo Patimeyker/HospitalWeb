@@ -1,0 +1,23 @@
+﻿{% extends 'app/layout.html' %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+<article class="mt-4">
+    <h2>{{ title }}</h2>
+    <hr>
+
+    {# Подключаем каждый ролик #}
+    {% for video_url in videos %}
+    <div class="mb-5">
+        <video width="100%" controls>
+            <source src="{{ video_url }}" type="video/mp4">
+            Ваш браузер не поддерживает элемент
+            <code>video</code>.
+        </video>
+    </div>
+    {% endfor %}
+
+    <a href="{% url 'app:blog_list' %}" class="btn btn-link">← Назад к списку</a>
+</article>
+{% endblock %}

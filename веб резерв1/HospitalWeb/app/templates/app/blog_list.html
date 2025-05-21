@@ -1,0 +1,24 @@
+﻿{% extends 'app/layout.html' %}
+{% load static %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+<h2>{{ title }}</h2>
+<div class="list-group">
+    {% for post in posts %}
+    <a class="list-group-item list-group-item-action" href="{{ post.get_absolute_url }}">
+        <h5>{{ post.title }}</h5>
+        <small class="text-muted">
+            {{ post.posted|date:"d.m.Y H:i" }}
+            {% if post.author %}
+            — автор: {{ post.author.get_full_name|default:post.author.username }}
+            {% endif %}
+        </small>
+        <p>{{ post.summary }}</p>
+    </a>
+    {% empty %}
+    <p>Статей пока нет.</p>
+    {% endfor %}
+</div>
+{% endblock %}
